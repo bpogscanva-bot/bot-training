@@ -1,93 +1,93 @@
-# 🎙️ Sales Training AI — Simulador de Ventas Claro Hogar
+# Sales Training AI — Simulador de Ventas Claro Hogar
 
-Plataforma ejecutiva de entrenamiento y evaluación de habilidades comerciales mediante **agentes conversacionales de voz en tiempo real**, impulsada por **ElevenLabs Conversational AI**, **React 19**, **Three.js** y **Supabase**.
+Plataforma de entrenamiento y evaluacion de habilidades comerciales basada en agentes conversacionales de voz en tiempo real, desarrollada con ElevenLabs Conversational AI, React 19, Three.js y Supabase.
 
-El sistema actúa como un simulador interactivo de cliente residencial exigente de Claro Hogar Colombia, evaluando el sondeo, manejo de objeciones y cierre de ventas bajo una política estricta de **un solo intento por usuario**.
+El sistema funciona como un simulador interactivo de cliente residencial para Claro Hogar Colombia, evaluando el protocolo comercial, la resolucion de objeciones tecnicas y economicas, y el cierre de ventas bajo una restriccion estricta de un solo intento por usuario registrado.
 
 ---
 
-## 📸 Arquitectura Visual del Estudio (Cockpit)
+## Arquitectura del Entorno de Simulacion
 
-La interfaz fue diseñada con una estética minimalista tipo estudio ejecutivo (*Clean Studio*), optimizada para encajar en el 100% de la altura de la pantalla (`100vh`) sin requerir desplazamiento vertical:
+La interfaz esta estructurada como un entorno operativo de cabina (Cockpit) a pantalla completa (`100vh`), sin desplazamiento vertical, dividida en tres columnas principales:
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  🔴 Sales Training AI [SIMULADOR CLARO]                 👤 Alex Thompson 🔔  [FINALIZAR SIMULACIÓN]│
-├──────────────────────────────┬───────────────────────────────────┬───────────────────────────────┤
-│    INSTRUCCIONES DEL RETO    │           HERO CENTRAL            │   TRANSCRIPCIÓN EN VIVO       │
-│                              │                                   │                               │
-│  ❶ Manejo de objeción...    │         [ 3D WebGL Orb ]          │  ┌─────────────────────────┐  │
-│  ❷ Presentar beneficios...   │          (Cromo Perla)            │  │ [Tú]             14:31  │  │
-│  ❸ Cierre de prueba...       │                                   │  │ Mensaje del asesor...   │  │
-│                              │       ılılılılılılılılılılı       │  └─────────────────────────┘  │
-│  ┌────────────────────────┐  │       (Onda Audio Bicolor)        │  ┌─────────────────────────┐  │
-│  │ Escenario: Migración a │  │                                   │  │ [Cliente]        14:31  │  │
-│  │ plan Ilimitado...      │  │        ( 🎤  |  🔴  )             │  │ Objeción del cliente... │  │
-│  └────────────────────────┘  │     [Floating Pill Dock]          │  └─────────────────────────┘  │
-│                              │                                   │                               │
-│  [Empatía] [Escucha Activa]  │  LLAMADA EN VIVO | 02:45          │                               │
-│  [Objeciones] [Cierre Ventas]│                                   │                               │
-└──────────────────────────────┴───────────────────────────────────┴───────────────────────────────┘
++--------------------------------------------------------------------------------------------------+
+|  [o] Sales Training AI [SIMULADOR CLARO]                 [User] Alex Thompson   [FINALIZAR]      |
++------------------------------+-----------------------------------+-------------------------------+
+|    INSTRUCCIONES DEL RETO    |           HERO CENTRAL            |     TRANSCRIPCION EN VIVO     |
+|                              |                                   |                               |
+|  1. Manejo de objecion...    |         [ 3D WebGL Orb ]          |  +-------------------------+  |
+|  2. Presentar beneficios...  |          (Cromo Perla)            |  | [Tu]              14:31 |  |
+|  3. Cierre de prueba...      |                                   |  | Mensaje del asesor...   |  |
+|                              |       |||||||||||||||||||||       |  +-------------------------+  |
+|  +------------------------+  |       (Visualizador Audio)        |  +-------------------------+  |
+|  | Escenario: Migracion a |  |                                   |  | [Cliente]         14:31 |  |
+|  | plan Ilimitado...      |  |        [ Mute | Hangup ]          |  | Objecion del cliente... |  |
+|  +------------------------+  |       (Control Flotante)          |  +-------------------------+  |
+|                              |                                   |                               |
+|  [Empatia] [Escucha Activa]  |  LLAMADA EN VIVO | 02:45          |                               |
+|  [Objeciones] [Cierre Ventas]|                                   |                               |
++------------------------------+-----------------------------------+-------------------------------+
 ```
 
 ---
 
-## 🚀 Características Principales
+## Caracteristicas Principales
 
-- **Agente de Voz Neuronal de Ultra-Baja Latencia**: Conexión bidireccional por WebSockets con ElevenLabs Conversational AI.
-- **Orb 3D WebGL con Shaders de Cromo Líquido**:
-  - Renderizado acelerado por hardware con Three.js.
-  - Dinámica de fluidos sensible a los estados de voz (`idle`, `listening`, `talking`, `thinking`).
-  - Bisel perimetral de alto contraste optimizado para fondos claros.
-- **Visualizador de Onda de Audio Binaural**: Barras armónicas animadas en tiempo real con halo de estudio difuso.
-- **Floating Pill Dock**: Control de llamada minimalista con botón de silencio de micrófono y acción rápida de colgar/iniciar.
-- **Streaming de Transcripción en Tarjetas Flotantes**: Registro en vivo de la conversación diferenciando intervenciones de `[Tú]` y `[Cliente]`.
-- **Garantía Criptográfica de 1 Solo Intento**:
-  - Autenticación con Supabase Auth.
-  - Backend Express que valida en base de datos si el usuario ya consumió su intento antes de generar una **Signed URL efímera**.
-  - Políticas de Seguridad a Nivel de Fila (RLS) en PostgreSQL.
-
----
-
-## 🛠️ Stack Tecnológico
-
-| Capa | Tecnologías |
-|---|---|
-| **Frontend** | React 19, Vite, Three.js, `@elevenlabs/react`, Lucide Icons, CSS3 Moderno |
-| **Backend** | Node.js, Express, `@supabase/supabase-js`, ElevenLabs REST API |
-| **Base de Datos** | PostgreSQL (Supabase), Row Level Security (RLS) |
-| **Estilos** | CSS Modular (`src/styles/`), Sin dependencias pesadas de frameworks |
+- **Agente de Voz Neuronal de Baja Latencia**: Conexion duplex por WebSockets mediante el SDK de ElevenLabs Conversational AI, permitiendo interrupciones naturales y modulacion contextual.
+- **Orb 3D WebGL con Shaders Procedurales**:
+  - Renderizado acelerado por GPU via Three.js.
+  - Reaccion dinamica a los estados conversacionales (`idle`, `listening`, `talking`, `thinking`).
+  - Bisel perimetral de contraste optimizado para entornos claros con sombreado de cromo perla.
+- **Visualizador Espectral de Audio**: Monitoreo de amplitud en tiempo real acoplado al canal de entrada y salida.
+- **Dock de Control Flotante**: Controles de llamada simplificados con funcion de silenciamiento de microfono y terminacion controlada de sesion.
+- **Registro de Transcripcion en Streaming**: Registro cronologico clasificado por rol (`Tu` y `Cliente`) sin persistencia de datos ficticios.
+- **Control Criptografico de Intento Unico**:
+  - Autenticacion gestionada con Supabase Auth.
+  - Generacion de URLs firmadas efimeras exclusivamente mediante API de backend tras verificar el registro del usuario.
+  - Bloqueo inmediato del acceso una vez registrado el estado completado en base de datos.
 
 ---
 
-## 📋 Requisitos Previos
+## Pila Tecnologica
 
-Antes de ejecutar el proyecto, asegúrate de contar con:
-
-- **Node.js** >= v18.0.0
-- **npm** >= v9.0.0
-- **Git** >= v2.40.0
-- Una cuenta en [Supabase](https://supabase.com) (base de datos y autenticación)
-- Una cuenta en [ElevenLabs](https://elevenlabs.io) con acceso a Conversational AI
+| Componente | Tecnologia | Version / Detalle |
+|---|---|---|
+| Frontend Framework | React | 19.x |
+| Bundler & Tooling | Vite | 6.x |
+| Renderizado Grafico | Three.js | Shaders GLSL personalizados |
+| Motor Conversacional | ElevenLabs Conversational AI | `@elevenlabs/react` |
+| Base de Datos & Auth | PostgreSQL (Supabase) | Row Level Security (RLS) habilitado |
+| Backend Runtime | Node.js / Express | API REST intermedia para URLs firmadas |
+| Iconografia | Lucide React | Iconos vectoriales minimalistas |
+| Estilos | CSS Modular | Desacoplado por componente |
 
 ---
 
-## ⚙️ Configuración Paso a Paso
+## Requisitos del Sistema
 
-### 1. Clonar el Repositorio
+- Node.js version 18.0.0 o superior
+- npm version 9.0.0 o superior
+- Git version 2.40.0 o superior
+- Proyecto configurado en Supabase (Base de datos y Auth)
+- Cuenta activa en ElevenLabs con un Agente Conversacional creado
+
+---
+
+## Guia de Instalacion y Despliegue
+
+### 1. Clonacion del Repositorio
 
 ```bash
 git clone https://github.com/bpogscanva-bot/bot-training.git
 cd bot-training
 ```
 
-### 2. Configurar la Base de Datos en Supabase
+### 2. Despliegue del Esquema de Base de Datos (Supabase)
 
-1. Ve a tu proyecto en [Supabase Dashboard](https://supabase.com/dashboard) y abre el **SQL Editor**.
-2. Copia y ejecuta el contenido del script [`supabase/schema.sql`](supabase/schema.sql):
+Ejecute el siguiente script SQL en el Editor SQL de su panel de Supabase (`supabase/schema.sql`):
 
 ```sql
--- Crea la tabla de intentos únicos
 create table if not exists public.user_attempts (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references auth.users(id) on delete cascade not null,
@@ -97,23 +97,33 @@ create table if not exists public.user_attempts (
   constraint unique_user_attempt unique (user_id)
 );
 
--- Habilita Row Level Security
 alter table public.user_attempts enable row level security;
+
+create policy "Users can view their own attempts"
+  on public.user_attempts for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert their own initial attempt"
+  on public.user_attempts for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can update their own attempt to completed"
+  on public.user_attempts for update
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);
 ```
 
 ---
 
-### 3. Configurar Variables de Entorno
+### 3. Configuracion de Variables de Entorno
 
-#### Frontend (`.env` en la raíz del proyecto):
-
-Crea un archivo `.env` tomando como base `.env.example`:
+#### Frontend: Crear archivo `.env` en el directorio raiz
 
 ```bash
 cp .env.example .env
 ```
 
-Edita `.env` con tus claves de Supabase y el ID del Agente de ElevenLabs:
+Contenido requerido en `.env`:
 
 ```env
 VITE_SUPABASE_URL=https://TU_PROYECTO.supabase.co
@@ -121,36 +131,34 @@ VITE_SUPABASE_ANON_KEY=tu_anon_key_publica_de_supabase
 VITE_ELEVENLABS_AGENT_ID=agent_5001m2rf4n4mf0qv7m8xa1p06n9t
 ```
 
-#### Backend (`server/.env`):
-
-Crea un archivo `server/.env` tomando como base `server/.env.example`:
+#### Backend: Crear archivo `server/.env`
 
 ```bash
 cp server/.env.example server/.env
 ```
 
-Edita `server/.env` con tus credenciales privadas (estas **nunca** deben exponerse en el cliente):
+Contenido requerido en `server/.env`:
 
 ```env
 PORT=3001
-ELEVENLABS_API_KEY=tu_xi_api_key_de_elevenlabs
+ELEVENLABS_API_KEY=tu_xi_api_key_privada
 ELEVENLABS_AGENT_ID=agent_5001m2rf4n4mf0qv7m8xa1p06n9t
 SUPABASE_URL=https://TU_PROYECTO.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=tu_service_role_key_secreta_de_supabase
+SUPABASE_SERVICE_ROLE_KEY=tu_service_role_key_secreta
 CLIENT_ORIGIN=http://localhost:5173
 ```
 
 ---
 
-### 4. Instalación de Dependencias
+### 4. Instalacion de Dependencias
 
-Instala los paquetes tanto en el cliente como en el servidor:
+Ejecute la instalacion tanto para el cliente como para el microservicio de backend:
 
 ```bash
-# Dependencias del Frontend
+# Instalacion de dependencias del Frontend
 npm install
 
-# Dependencias del Backend
+# Instalacion de dependencias del Backend
 cd server
 npm install
 cd ..
@@ -158,34 +166,36 @@ cd ..
 
 ---
 
-## 🏃‍♂️ Ejecución del Entorno de Desarrollo
+## Ejecucion en Modo Desarrollo
 
 Se recomienda iniciar ambos servicios en terminales independientes:
 
-### Terminal 1: Backend Microservicio (Puerto 3001)
+### Terminal 1: Servidor de Backend (Puerto 3001)
 
 ```bash
 npm run server
 ```
 
-Deberás ver en consola:
+Salida esperada:
 ```
 [Server] Microservicio iniciado en http://localhost:3001
 [Server] Conectado a Supabase correctamente.
 ```
 
-### Terminal 2: Frontend React + Vite (Puerto 5173)
+### Terminal 2: Servidor de Frontend (Puerto 5173)
 
 ```bash
 npm run dev
 ```
 
-Abre en tu navegador web:
-👉 **`http://localhost:5173`**
+Abra el navegador en:
+`http://localhost:5173`
 
 ---
 
-## 🔒 Flujo de Seguridad y Regla de 1 Solo Intento
+## Modelo de Seguridad y Control de Acceso
+
+El flujo de ejecucion garantiza de manera deterministica que ningun usuario pueda reiniciar o repetir una prueba una vez consumida su sesion:
 
 ```mermaid
 sequenceDiagram
@@ -196,81 +206,82 @@ sequenceDiagram
     participant DB as Supabase DB
     participant Eleven as ElevenLabs ConvAI
 
-    Asesor->>Client: Inicia sesión (Email / Password)
-    Client->>Server: Solicita Signed URL (/api/convai/signed-url)
-    Server->>DB: Consulta si user_id ya completó intento
-    alt Intento ya consumido
-        DB-->>Server: Status = completed
-        Server-->>Client: 403 Forbidden (Intento agotado)
-        Client-->>Asesor: Muestra pantalla de bloqueo definitivo
+    Asesor->>Client: Autenticacion (Credenciales)
+    Client->>Server: Solicitud de Signed URL (/api/convai/signed-url)
+    Server->>DB: Verificar estado en user_attempts
+    alt Intento ya consumido (status = completed)
+        DB-->>Server: Registro con status = completed
+        Server-->>Client: 403 Forbidden
+        Client-->>Asesor: Renderiza vista de bloqueo definitivo
     else Intento disponible
-        DB-->>Server: Sin intentos previos
-        Server->>Eleven: Solicita Signed URL efímera
-        Eleven-->>Server: Retorna wss://...signed_url
+        DB-->>Server: Sin registro previo
+        Server->>Eleven: Solicitar Signed URL efimera (API Key privada)
+        Eleven-->>Server: Token WSS de un solo uso
         Server-->>Client: 200 OK con Signed URL
-        Client->>Eleven: Conexión WebSocket en tiempo real
-        Asesor->>Eleven: Interacción por voz (Simulación en vivo)
-        Asesor->>Client: Cuelga llamada / Finaliza sesión
-        Client->>Server: Notifica finalización (/api/convai/complete-attempt)
-        Server->>DB: Registra intento como 'completed'
-        Client-->>Asesor: Bloqueo definitivo de pantalla
+        Client->>Eleven: Apertura de WebSocket directo
+        Asesor->>Eleven: Interaccion de voz en tiempo real
+        Asesor->>Client: Finalizar llamada
+        Client->>Server: Notificar finalizacion (/api/convai/complete-attempt)
+        Server->>DB: Actualizar status = completed
+        Client-->>Asesor: Transicion a vista de bloqueo definitivo
     end
 ```
 
 ---
 
-## 📂 Estructura del Código
+## Estructura del Proyecto
 
 ```text
 bot-training/
-├── public/                  # Favicon e isotipos vectoriales
-├── server/                  # Microservicio Node.js / Express
-│   ├── src/
-│   │   ├── controllers/     # Controladores (emisión de signed-urls, registro de intentos)
-│   │   ├── routes/          # Endpoints de API REST
-│   │   ├── server.js        # Configuración de Express, CORS y servidor HTTP
-│   │   └── supabase.js      # Cliente de Supabase con service_role
-│   ├── .env.example
-│   └── package.json
-├── src/
-│   ├── assets/              # Gráficos estáticos
-│   ├── components/
-│   │   ├── auth/            # Formulario de autenticación / registro
-│   │   └── voice-agent/     # Componentes del simulador
-│   │       ├── AgentTelemetry.jsx   # Instrucciones, escenario y rúbrica (Columna Izquierda)
-│   │       ├── AttemptCompleted.jsx # Pantalla de bloqueo tras consumir el intento
-│   │       ├── CallControls.jsx     # Dock flotante con botones de llamada y silenciar
-│   │       ├── LiveWaveform.jsx     # Visualizador de onda de audio con halo de luz
-│   │       ├── Orb.jsx              # Esfera 3D WebGL con shaders de Three.js
-│   │       ├── TranscriptFeed.jsx   # Streaming de transcripción en tarjetas flotantes
-│   │       └── VoiceWidget.jsx      # Orquestador del Cockpit y sesión ElevenLabs
-│   ├── hooks/               # Custom hooks (useAuth, useAttemptStatus)
-│   ├── lib/                 # Inicialización cliente de Supabase
-│   ├── services/            # Llamadas a endpoints del microservicio
-│   ├── styles/              # Archivos CSS modulares desacoplados
-│   ├── App.jsx              # Ruteo condicional por estado de intento
-│   └── main.jsx
-├── supabase/
-│   └── schema.sql           # Esquema SQL y políticas de seguridad RLS
-├── .env.example
-├── eslint.config.js
-├── package.json
-└── vite.config.js
+|-- public/                  # Recursos publicos estaticos
+|-- server/                  # Backend Node.js / Express
+|   |-- src/
+|   |   |-- controllers/     # Controladores de negocio y autorizacion
+|   |   |-- routes/          # Rutas de la API REST
+|   |   |-- server.js        # Configuracion del servidor HTTP y middleware CORS
+|   |   `-- supabase.js      # Cliente Supabase inicializado con service_role
+|   |-- .env.example
+|   `-- package.json
+|-- src/
+|   |-- assets/              # Elementos visuales y graficos
+|   |-- components/
+|   |   |-- auth/            # Modulo de inicio de sesion y registro
+|   |   `-- voice-agent/     # Componentes del simulador
+|   |       |-- AgentTelemetry.jsx   # Instrucciones, escenario y rubrica (Panel Izquierdo)
+|   |       |-- AttemptCompleted.jsx # Componente de bloqueo por intento consumido
+|   |       |-- CallControls.jsx     # Barra de control de llamada flotante
+|   |       |-- LiveWaveform.jsx     # Visualizador de audio reactivo
+|   |       |-- Orb.jsx              # Esfera tridimensional Three.js con shaders GLSL
+|   |       |-- TranscriptFeed.jsx   # Tarjetas flotantes de transcripcion en tiempo real
+|   |       `-- VoiceWidget.jsx      # Contenedor orquestador del Cockpit
+|   |-- hooks/               # Custom React hooks (useAuth, useAttemptStatus)
+|   |-- lib/                 # Modulo de conexion a Supabase
+|   |-- services/            # Servicios de integracion con el backend
+|   |-- styles/              # Hojas de estilo CSS modulares
+|   |-- App.jsx              # Ruteador principal condicionado por estado
+|   `-- main.jsx
+|-- supabase/
+|   `-- schema.sql           # Definicion DDL y politicas RLS de PostgreSQL
+|-- .env.example
+|-- eslint.config.js
+|-- package.json
+`-- vite.config.js
 ```
 
 ---
 
-## 🧪 Scripts Disponibles
+## Scripts de Ejecucion
 
-En la raíz del proyecto puedes ejecutar:
-
-- `npm run dev`: Inicia el servidor de desarrollo de Vite (`localhost:5173`).
-- `npm run build`: Compila y optimiza la aplicación para producción en la carpeta `dist/`.
-- `npm run lint`: Ejecuta ESLint para verificar estándares de calidad y buenas prácticas.
-- `npm run server`: Inicia el microservicio de backend Express (`localhost:3001`).
+| Comando | Descripcion |
+|---|---|
+| `npm run dev` | Inicia el entorno de desarrollo local con Vite |
+| `npm run build` | Compila y optimiza el frontend para despliegue productivo |
+| `npm run preview` | Previsualiza localmente el paquete de produccion generado |
+| `npm run lint` | Ejecuta el analisis estatico de codigo mediante ESLint |
+| `npm run server` | Inicia el microservicio de backend en `localhost:3001` |
 
 ---
 
-## 📄 Licencia
+## Licencia y Confidencialidad
 
-Este proyecto es de uso interno y confidencial para entrenamiento comercial de telecomunicaciones. Todos los derechos reservados.
+Propiedad intelectual y de uso exclusivo para procesos de evaluacion y capacitacion comercial. Todos los derechos reservados. Prohibida su distribucion, copia o modificacion sin autorizacion expresa.

@@ -1,0 +1,122 @@
+/* ==============================================================================
+   CHALLENGE INSTRUCTIONS CARD (COMPACT 1-SCREEN SPANISH)
+   ============================================================================== */
+
+.challenge-instructions-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+  padding: 1.35rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.instructions-header {
+  display: flex;
+  align-items: center;
+}
+
+.instructions-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1e293b;
+  text-transform: uppercase;
+}
+
+/* Steps List */
+.instructions-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.step-circle-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(229, 57, 53, 0.28);
+}
+
+.step-label-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.35;
+}
+
+/* Red Scenario Speech Bubble */
+.scenario-speech-bubble {
+  position: relative;
+  background: #e53935;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.25);
+  margin-top: 0.15rem;
+}
+
+.bubble-pointer {
+  position: absolute;
+  top: -6px;
+  left: 18px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #e53935;
+}
+
+.scenario-text {
+  margin: 0;
+  font-size: 0.77rem;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.scenario-text strong {
+  font-weight: 700;
+}
+
+/* 6 Skills Chips */
+.skills-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 0.1rem;
+}
+
+.skill-chip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.2;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.skill-chip:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}

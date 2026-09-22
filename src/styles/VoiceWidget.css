@@ -1,0 +1,281 @@
+/* ==============================================================================
+   VOICE STUDIO EXECUTIVE COCKPIT STYLES (COMPACT 1-SCREEN SPANISH)
+   ============================================================================== */
+
+.voice-studio-container {
+  width: 100%;
+  max-width: 1340px;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 0.85rem 1.75rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: fadeIn 0.35s ease;
+}
+
+/* ==============================================================================
+   TOP NAVBAR (SLIM COMPACT)
+   ============================================================================== */
+.studio-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  padding-bottom: 0.5rem;
+}
+
+.studio-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.brand-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.brand-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.studio-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: #fef2f2;
+  color: #e53935;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #fee2e2;
+}
+
+.studio-user-dock {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.user-profile-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.btn-icon-bell {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-bell:hover {
+  background: #e2e8f0;
+  color: #111827;
+}
+
+.bell-badge-dot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 1.5px solid #ffffff;
+}
+
+.btn-icon-logout {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-logout:hover {
+  color: #e53935;
+  background: #fee2e2;
+}
+
+/* Botón de acción rojo integrado en la barra */
+.btn-end-simulation {
+  background: #e53935;
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1.15rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-end-simulation:hover:not(:disabled) {
+  background: #d32f2f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.4);
+}
+
+.btn-end-simulation:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* ==============================================================================
+   COCKPIT GRID (FIT TO VIEWPORT WITHOUT SCROLL)
+   ============================================================================== */
+.studio-cockpit-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 310px 1fr 360px;
+  gap: 2rem;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Columna Izquierda */
+.studio-column-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Columna Central (Hero) */
+.studio-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.orb-display-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 330px;
+}
+
+.orb-ambient-light {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 45%, rgba(202, 220, 252, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 65% 55%, rgba(160, 185, 209, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(226, 232, 240, 0.7) 0%, transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+/* Columna Derecha */
+.studio-column-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ==============================================================================
+   RESPONSIVE DESIGN (Para pantallas pequeñas/móviles donde scroll es inevitable)
+   ============================================================================== */
+@media (max-width: 1100px) {
+  .studio-cockpit-layout {
+    grid-template-columns: 280px 1fr 320px;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .voice-studio-container {
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+  }
+
+  .studio-topbar {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .studio-user-dock {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .studio-cockpit-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    overflow: visible;
+  }
+
+  .studio-column-center {
+    order: 1;
+  }
+
+  .studio-column-left {
+    order: 2;
+  }
+
+  .studio-column-right {
+    order: 3;
+    max-height: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

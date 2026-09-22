@@ -1,0 +1,202 @@
+/* ==============================================================================
+   FLOATING TRANSCRIPT CARDS (COMPACT 1-SCREEN SPANISH)
+   ============================================================================== */
+
+.transcript-column-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-height: calc(100vh - 110px);
+}
+
+.transcript-header-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.transcript-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1e293b;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Stack of separate floating cards with internal smooth scroll if long */
+.transcript-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 145px);
+  padding-right: 2px;
+}
+
+/* Minimalist Scrollbar */
+.transcript-cards-stack::-webkit-scrollbar {
+  width: 4px;
+}
+.transcript-cards-stack::-webkit-scrollbar-track {
+  background: transparent;
+}
+.transcript-cards-stack::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+/* Empty State Card */
+.transcript-empty-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.empty-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.empty-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+.empty-card-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.empty-card-text {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+/* Floating Real Message Card */
+.transcript-floating-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.03),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+  padding: 0.95rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  animation: cardFadeIn 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transcript-floating-card:hover {
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-speaker-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.speaker-avatar-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.speaker-avatar-circle.user-avatar {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.speaker-avatar-circle.customer-avatar {
+  background: #e53935;
+  color: #ffffff;
+}
+
+.card-speaker-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.card-timestamp {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.card-message-text {
+  margin: 0;
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: #334155;
+  font-weight: 400;
+}
+
+/* Typing state card */
+.typing-card {
+  border-style: dashed;
+}
+
+.typing-status-tag {
+  font-size: 0.65rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.typing-dots-wave {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0.15rem 0;
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

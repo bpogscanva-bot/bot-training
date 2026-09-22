@@ -1,0 +1,135 @@
+/* ==============================================================================
+   ATTEMPT COMPLETED COMPONENT STYLES
+   ============================================================================== */
+
+.completed-card {
+  width: 620px;
+  max-width: 95%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.completed-brand-header {
+  margin-bottom: -0.25rem;
+}
+
+.completed-brand-header .brand-infinity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.completed-brand-header .infinity-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.completed-brand-header .brand-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #e53935;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.completed-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.3);
+}
+
+.completed-card h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.completed-subtitle {
+  font-size: 0.92rem;
+  color: #64748b;
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.completed-details {
+  width: 100%;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  color: #64748b;
+}
+
+.detail-value {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.detail-value.highlight {
+  color: #e53935;
+}
+
+.badge-success {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #d1fae5;
+}
+
+.completed-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}

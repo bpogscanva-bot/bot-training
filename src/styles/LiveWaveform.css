@@ -1,0 +1,50 @@
+/* ==============================================================================
+   LIVE WAVEFORM COMPONENT STYLES (COMPACT 1-SCREEN)
+   ============================================================================== */
+
+.eleven-live-waveform-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem 0 0.4rem;
+}
+
+/* Halo dorado cálido a la izquierda */
+.waveform-warm-left-glow {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 38px;
+  background: radial-gradient(ellipse, rgba(251, 191, 36, 0.4) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Halo celeste frío a la derecha */
+.waveform-cool-right-glow {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 38px;
+  background: radial-gradient(ellipse, rgba(56, 189, 248, 0.45) 0%, rgba(14, 165, 233, 0.15) 50%, transparent 75%);
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.eleven-live-waveform-wrapper canvas {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 2;
+  filter: drop-shadow(0 2px 5px rgba(148, 163, 184, 0.25));
+}

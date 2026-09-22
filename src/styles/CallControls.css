@@ -1,0 +1,143 @@
+/* ==============================================================================
+   FLOATING PILL DOCK CONTROLS (EXPANDED PROMINENT FORMAT)
+   ============================================================================== */
+
+.call-controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.call-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Floating White Capsule Dock - Prominent Executive Size */
+.floating-pill-dock {
+  background: #ffffff;
+  border-radius: 9999px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.09),
+    0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  transition: all 0.25s ease;
+}
+
+.floating-pill-dock:hover {
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Mic Action Button */
+.dock-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dock-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: #0f172a;
+  transform: translateY(-1px);
+}
+
+.dock-btn.muted {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.dock-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Central Red Call Action Button - Big, Tactile & Bold */
+.dock-main-call-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(229, 57, 53, 0.45);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+}
+
+.dock-main-call-btn:hover:not(:disabled) {
+  transform: scale(1.07);
+  background: #d32f2f;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.58);
+}
+
+.dock-main-call-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.dock-main-call-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.dock-call-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Caption under Dock */
+.dock-status-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.status-caption-text {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1e293b;
+  text-transform: uppercase;
+}
+
+.status-caption-text.standby {
+  color: #64748b;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
